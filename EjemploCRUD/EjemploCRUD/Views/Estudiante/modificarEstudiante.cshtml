@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "modificarEstudiante";
+}
+
+<h2>Editar estudiante</h2>
+
+@{
+    foreach (System.Data.DataRow dr in ViewBag.emp.Rows)
+    {
+        <form method="post">
+            <input type="text" id="id" name="id" hidden value="@dr["id"]">
+
+            <div class="form-group">
+                <label for="carnet">Carnet</label>
+                <input type="text" class="form-control" id="carnet" name="carnet" placeholder="Carnet" value="@dr["carnet"]">
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="@dr["nombre"]">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="@dr["apellido"]">
+            </div>
+
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Sexo" value="@dr["sexo"]">
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" value="@dr["edad"]">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Agregar" />
+        </form>
+    }
+}
+
+
+
